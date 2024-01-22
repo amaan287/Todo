@@ -54,4 +54,20 @@ const Todo = ({ text, id,setUpdateUI,setShowPopup,setPopupContent, }: TodoProps)
                 setUpdateUI((prevState)=>!prevState)
            /// pass some information about the deleted todo
             })
+                .catch(err=>console.log(err))}
+    
+    return (
+
+        <div className="todo">
+                <IoIosCheckmarkCircle className="todo__check" onClick={toggleStyle} />
+            <div className="todo__text" style={completedStyle?completed:completedTwo} >
+                {text}
+            </div>
+            <div className="todo__icons">
+                <FaEdit className="todo__edit" onClick={updateTodo} />
+                <MdDelete className="todo__delete" onClick={deleteTodo} />
+            </div>
+        </div>
+      )}
+    export default Todo;
             
